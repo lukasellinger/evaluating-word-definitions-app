@@ -11,7 +11,7 @@ export interface Example {
 export interface VerificationResult {
   word: string
   claim: string
-  predicted: number
+  predicted: string
   in_wiki: string
   selected_evidences?: Array<{
     title: string

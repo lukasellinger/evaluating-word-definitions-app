@@ -139,14 +139,14 @@ export default function FactVerificationPipeline() {
 
     if (verificationResult) {
       return (
-        <Alert severity={verificationResult.predicted === 1 ? 'success' : 'error'}
-               icon={verificationResult.predicted === 1 ? <Check /> : <Close />}>
+        <Alert severity={verificationResult.predicted === 'SUPPORTED' ? 'success' : 'error'}
+               icon={verificationResult.predicted === 'SUPPORTED' ? <Check /> : <Close />}>
           <AlertTitle>
-            {verificationResult.predicted === 1 ? 'Claim Verified' : 'Claim Not Verified'}
+            {verificationResult.predicted === 'SUPPORTED' ? 'Supported' : 'Not Supported'}
           </AlertTitle>
           {verificationResult.in_wiki === 'Yes' ? (
             <>
-              The claim was found in Wikipedia. 
+              Evidence found in Wikipedia.
               {verificationResult.selected_evidences && verificationResult.selected_evidences.length > 0 && (
                 <Box component="details" sx={{ mt: 2 }}>
                   <summary style={{ cursor: 'pointer', fontWeight: 'medium' }}>View Evidence</summary>
@@ -162,7 +162,7 @@ export default function FactVerificationPipeline() {
               )}
             </>
           ) : (
-            'The claim was not found in Wikipedia.'
+            'No evidence found in Wikipedia.'
           )}
         </Alert>
       );
