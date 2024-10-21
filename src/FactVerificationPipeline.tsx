@@ -26,6 +26,8 @@ import {
 import { Check, Close, Search } from '@mui/icons-material';
 import { Dataset, Example, VerificationResult, WebSocketMessage } from './types';
 import { fetchDatasets, fetchExamples, verifyFact } from './api';
+import logo from './assets/logos/logo.svg';
+import { ReactComponent as Logo } from './assets/logos/logo.svg';
 
 export default function FactVerificationPipeline() {
   const [activeTab, setActiveTab] = useState<'manual' | 'dataset'>('manual');
@@ -170,11 +172,51 @@ export default function FactVerificationPipeline() {
   };
 
   return (
-    <Card sx={{ maxWidth: 800, mx: 'auto' }}>
-      <CardHeader
-        title="Fact Verification Pipeline"
-        subheader="Enter a word and its definition to verify, or select an example from a dataset."
-      />
+<Card sx={{ maxWidth: 800, mx: 'auto' }}>
+  <CardHeader
+    title={
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: { xs: 2, sm: 3 },
+        }}
+      >
+        {/* Logo Section */}
+        <Box
+          component="img"
+          src={logo}
+          alt="Logo"
+          sx={{
+            width: { xs: 100, sm: 150 },
+            height: 'auto',
+            mb: 2,
+          }}
+        />
+
+        {/* Text Section */}
+        <Box sx={{ textAlign: 'center', flex: 1 }}>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' }, mb: 2 }}
+          >
+            Fact Verification Pipeline
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}
+          >
+            Enter a word and its definition to verify, or select an example from a dataset.
+          </Typography>
+        </Box>
+      </Box>
+    }
+    sx={{ pb: 0 }}
+  />
+
       <CardContent>
         <Tabs value={activeTab} onChange={handleTabChange} sx={{ mb: 2 }}>
           <Tab label="Manual Input" value="manual" />
@@ -277,7 +319,7 @@ export default function FactVerificationPipeline() {
                 <Button
                   key={index}
                   variant="text"
-                  sx={{ display: 'block', width: '100%', textAlign: 'left', mb: 1 }}
+                  sx={{ display: 'block', width: '100%', textAlign: 'left', mb: 1, textTransform: 'None' }}
                   onClick={() => handleExampleSelect(example)}
                 >
                   <Typography variant="subtitle1">{example.word}</Typography>

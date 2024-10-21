@@ -2,7 +2,7 @@
   "name": "evaluating-word-definitions-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<your-username>.github.io/<your-repository-name>",
+  "homepage": "https://lukasellinger.github.io/evaluating-word-definitions-app",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",

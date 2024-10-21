@@ -3,9 +3,9 @@ import FactVerificationPipeline from "./FactVerificationPipeline";
 
 function App() {
   return (
-    <div className="App">
-      <FactVerificationPipeline/>
-    </div>
+      <div className="App">
+          <FactVerificationPipeline/>
+      </div>
   );
 }
 
