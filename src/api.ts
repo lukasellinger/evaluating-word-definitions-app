@@ -1,7 +1,7 @@
 import { Dataset, Example, VerificationRequest, WebSocketMessage } from './types'
 
-const API_BASE_URL = 'http://188.245.185.175:8000'
-const WS_URL = 'ws://188.245.185.175:8000/ws'
+const API_BASE_URL = 'https://ellinger-solutions.com/api'
+const WS_URL = 'wss:///ellinger-solutions.com/api/ws'
 
 export async function fetchDatasets(): Promise<Dataset[]> {
   const response = await fetch(`${API_BASE_URL}/datasets`)
