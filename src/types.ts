@@ -1,6 +1,7 @@
 export interface Dataset {
   id: string
   name: string
+  lang: string
 }
 
 export interface Example {
@@ -24,6 +25,7 @@ export interface VerificationResult {
 export interface VerificationRequest {
   word: string
   claim: string
+  lang: string
 }
 
 export interface ProgressMessage {
